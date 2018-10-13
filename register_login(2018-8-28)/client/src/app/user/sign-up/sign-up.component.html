@@ -1,0 +1,61 @@
+<div class="login-page" style="padding: 2em !important;">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <!-- <img class="user-avatar" src="assets/images/logo.png" width="150px" /> -->
+            <h1>Sign Up</h1>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                <img [src]="imageUrl" name="photo"  style=" border-radius: 50%;width:100px;height:100px"> <br/>
+
+                <div class="form-group">
+                    <!-- <label for="file">Choose File</label> -->
+                    <input type="file" class="fileInput inputImg"
+                            id="file"
+                            (change)="handleFileInput($event.target.files)">
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="text" formControlName="fullName" class="form-control  input-underline"  placeholder="FullName"
+                        [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" required/>
+                        <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+                            <div *ngIf="f.fullName.errors.required" class="font15">FullName is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" formControlName="email" class="form-control  input-underline"  placeholder="Email"
+                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required"  class="font15">Email is required</div>
+                            <div *ngIf="f.email.errors.pattern"  class="font15">Invalid email</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" formControlName="password" class="form-control  input-underline"   placeholder="Password"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required"  class="font15">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength"  class="font15">Password must be at least 5 characters</div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <input type="password" class="form-control input-underline" id="" placeholder="Repeat Password">
+                    </div> -->
+                </div>
+                <button class="btn rounded-btn" type="submit"> Sign Up </button>&nbsp;
+            </form>
+            <a class="btn rounded-btn underBtn"  [routerLink]="['/signin']" > Log in </a>
+        </div>
+    </div>
+</div>
+<div class="success" *ngIf="showSuccessMessage">
+  Saved successfully
+</div>
+
+<div class="alert" *ngIf="serverErrorMessage">
+    {{serverErrorMessage}}
+  </div>

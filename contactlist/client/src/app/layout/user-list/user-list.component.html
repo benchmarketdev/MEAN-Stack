@@ -1,0 +1,30 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'User list'" [icon]="'fa-table'"></app-page-header>
+  <div class="row">
+      <div class="card col-lg-12">
+          <div class="card-header">User list</div>
+          <table class="card-body table">
+              <thead>
+              <tr>
+                  <th>No</th>
+                  <th>user name</th>
+                  <th>first name</th>
+                  <th>last name</th>
+                  <th>Act(edit)</th>
+                  <th>Act(delete)</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let user of users;let i=index;" class="table-active">
+                  <td>{{i+1}}</td>
+                  <td>{{user.username}}</td>
+                  <td>{{user.firstname}}</td>
+                  <td>{{user.lastname}}</td>
+                  <td><input type="button"  value="Edit" class="btn btn-primary"></td>
+                  <td><input type="button" (click) = "deleteUser(user.id)" value="Delete" class="btn btn-danger"></td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

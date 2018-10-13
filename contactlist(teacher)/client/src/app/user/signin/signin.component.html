@@ -1,0 +1,32 @@
+<div *ngIf="isLoginError" class="red-text center error-message">
+    <i class="material-icons">error</i> Incorrect email or password
+</div>
+<div class="well" style="margin-top:40px;">
+  <h1>LOGIN</h1>
+  <form #loginForm="ngForm" class="form-horizontal" (ngSubmit)="login(Email.value,Password.value)">
+    <div class="form-group">
+      <label class="col-md-3 control-label">Email <b class="error">*</b>:</label>
+      <div class="col-md-6">
+        <input class="form-control" type="email" #Email ngModel name="Email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Password <b class="error">*</b>:</label>
+      <div class="col-md-6">
+        <input class="form-control" type="password" #Password ngModel name="Password" placeholder="Password" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+          <button [disabled]="!loginForm.valid" class="btn btn-default" type="submit">Login</button>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+    <div style="clear:both"></div>
+  </form>
+</div>
+

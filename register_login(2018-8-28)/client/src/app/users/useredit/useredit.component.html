@@ -1,0 +1,25 @@
+<div class="container">
+  <h4>Edit User</h4>
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group row has-success">
+      <div class="col-xl-6 text-xs-center">
+        <label class="form-control-label" for="inputSuccess"> User Name:</label>
+        <input type="text" formControlName="name" placeholder="Name"
+         class="form-control form-control-success"  >
+
+          <!-- <input type="text" class="form-control input-underline input-lg"
+           #email="ngModel" [(ngModel)]="userService.selectedUser.email" 
+           name="email" placeholder="Email"
+                        required [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid}"> -->
+      </div>
+      <div class="col-xl-6 text-xs-center">
+        <label class="form-control-label" for="inputSuccess"> User Email:</label>
+        <input type="text" formControlName="email" placeholder="Name" name="email" id="email" class="form-control form-control-success">
+      </div>
+
+    </div>
+    <button class="btn btn-sm btn-primary" type="submit">Update</button>
+  </form>
+</div>

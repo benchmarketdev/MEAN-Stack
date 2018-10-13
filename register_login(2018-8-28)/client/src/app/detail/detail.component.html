@@ -1,0 +1,45 @@
+<div>
+    <!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">Detail information</div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr >
+                            <!-- <th>School Name</th> -->
+                            <th>Year</th>
+                            <th>Week</th>
+                            <th>Month</th>
+                            <th>Electric euro</th>
+                            <th>Electric Kwh</th>
+                            <th>Heating euro</th>
+                            <th>Heating Kwh</th>
+                            <th>Water Euro</th>
+                            <th>Water Liter</th>
+                            
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let data of schoolDatas">
+                            <!-- <td>/index.html</td> -->
+                            <td>{{data.year}}</td>
+                            <td>{{data.week}}</td>
+                            <td>{{data.month}}</td>
+                            <td>{{data.elecEuro}}</td>
+                            <td>{{data.elecKwh}}</td>
+                            <td>{{data.heatEuro}}</td>
+                            <td>{{data.heatKwh}}</td>
+                            <td>{{data.waterEuro}}</td>
+                            <td>{{data.waterLiter}}</td>
+                            
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

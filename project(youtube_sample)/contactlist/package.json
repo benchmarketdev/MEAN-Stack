@@ -1,0 +1,19 @@
+{
+  "name": "contactlist",
+  "version": "1.0.0",
+  "description": "a simple mean application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sergey oleg",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/cli": "^6.1.4",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9",
+    "nodemon": "^1.18.3"
+  }
+}

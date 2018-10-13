@@ -1,0 +1,26 @@
+<form (ngSubmit) = "addSchool()">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card mb-3">
+            <div class="card-header">Enter new school name</div>
+            <!-- Large modal -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-9">
+                        <input [(ngModel)]="schoolname" name="schoolname" class="form-control" placeholder="Enter new school name">
+                    </div>
+                    <input type="submit" class="col-md-2 btn btn-primary" value="Register">
+                </div>
+                </div>
+                <!-- <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Registeration stating&hellip;</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </ng-template> -->
+            </div>
+        </div>
+    </div>
+</form>

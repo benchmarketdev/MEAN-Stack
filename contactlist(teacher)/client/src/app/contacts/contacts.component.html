@@ -1,0 +1,56 @@
+<style>
+.col-md-3{float:left;}
+</style>
+<div class="">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-8">
+      <h1>Dashboard</h1>
+    </div>
+    <div class="col-md-3" style="margin-top:20px;">
+      <a class="btn btn-default" routerLink='/login' routerLinkActive='active'>
+          <i class="fa fa-refresh"></i> Log Out
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-8">
+      <div class="form-group">
+        <div class="col-md-12">
+          <input class="form-control" type="text" #Keyword ngModel name="Keyword" (keyup)="search(Keyword.value)" placeholder="Keyword">
+        </div>
+        <div style="clear:both"></div>
+      </div>
+      <div *ngFor="let employee of employees">
+        <div class="well well-sm">
+          <div class="row">
+            <div class="col-sm-2 col-md-2">
+              <img src="{{employee.author['avatar_url']}}" class="img-rounded img-responsive">
+            </div>
+            <div class="col-sm-2 col-md-8">
+              <h4>SHA: {{employee.sha}}</h4>
+              <h4>Author: {{employee.commit['author']['name']}}</h4><br>
+              <h5>Message: {{employee.commit['message']}}</h5>
+              <h5>Date: {{employee.commit['author']['date']}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <h3>User List</h3>
+      <div *ngFor="let contact of contacts">
+        <div class="row">
+          <div class="col-md-12">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active">{{contact.email}}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

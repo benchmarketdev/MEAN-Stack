@@ -1,0 +1,89 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Save school'" [icon]="'fa-edit'"></app-page-header>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form (ngSubmit) = addSchooldata()>
+                <fieldset class="form-group">
+                    <div class="form-group">
+                        <label>School</label>
+                        <select [(ngModel)]="school_id" name="school_id" class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-4">
+                            <label>Year</label>
+                            <select [(ngModel)]="year" name="year" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>                            
+                        </div>
+                        <div class="col-lg-4">
+                            <label>Week</label>
+                            <select [(ngModel)]="week" name="week" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>                            
+                        </div>
+                        <div class="col-lg-4">
+                            <label>Month</label>
+                            <select [(ngModel)]="month" name="month" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>                            
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-6">
+                            <label>Electricity_euor</label>
+                            <input [(ngModel)]="elect_eur" name="elect_eur" class="form-control" placeholder="Enter Electricity_euor">   
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Electricity_kwh</label>
+                            <input [(ngModel)]="elect_kwh" name="elect_kwh" class="form-control" placeholder="Enter Electricity_kwh">   
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-6">
+                            <label>Heating_euor</label>
+                            <input [(ngModel)]="heating_eur" name="heating_eur"  class="form-control" placeholder="Enter Heating_euor">   
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Heating_kwh</label>
+                            <input [(ngModel)]="heating_kwh" name="heating_kwh" class="form-control" placeholder="Enter Heating_kwh">   
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-6">
+                            <label>Water_euor</label>
+                            <input [(ngModel)]="water_eur" name="water_eur" class="form-control" placeholder="Enter Water_euor">   
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Water_kwh</label>
+                            <input [(ngModel)]="water_kwh" name="water_kwh" class="form-control" placeholder="Enter Water_kwh">   
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Save</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+
+
+  

@@ -1,0 +1,38 @@
+<div class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <!-- <img class="user-avatar" src="assets/images/logo.png" width="150px" /> -->
+            <h1>Sign In</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-content">
+     
+                    <div class="form-group">
+                        <input type="text" formControlName="email" class="form-control  input-underline"  placeholder="Email"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required"  class="font15">Email is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" formControlName="password" class="form-control  input-underline"   placeholder="Password"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required"  class="font15">Password is required</div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn rounded-btn" type="submit"> Sign In </button>&nbsp;
+            </form>
+            <a class="btn rounded-btn underBtn"  [routerLink]="['/signup']" > Sign Up </a>
+        </div>
+    </div>
+</div>
+<div class="success" *ngIf="showSuccessMessage">
+  Saved successfully
+</div>
+
+<div class="alert" *ngIf="serverErrorMessage">
+    {{serverErrorMessage}}
+  </div>

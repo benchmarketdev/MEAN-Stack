@@ -1,0 +1,37 @@
+<div>
+    <!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">Users Table</div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Created Date</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let user of users; let i=index;">
+                            <td>{{i+1}}</td>
+                            <td>{{user._id}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.createdDate |date:'h:mm a z'}}</td>
+                            <td>
+                                <a class="btn btn-warning" [routerLink]="['/dashboard/users/edit', user._id]">&nbsp;&nbsp;Edit&nbsp;&nbsp;</a>
+ 
+                              <!-- <button (click)="editUser(user._id)" type="button" class="btn btn-warning right">&nbsp;&nbsp;Edit&nbsp;&nbsp;</button> -->
+                                <button  (click)="deleteUser(user._id)"  type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <h4>Add new school</h4>
+
+  <form  [formGroup]="addForm"  (ngSubmit) = "addSchool()">
+
+    <div class="form-group has-success">
+      <label class="form-control-label" for="inputSuccess">Name:</label>
+      <input type="text" formControlName="name" placeholder="Name" name="name" id="email" class="form-control form-control-success" >
+    </div>
+    <button class="btn btn-sm btn-primary" type="submit">Save</button>
+  </form>
+</div>

@@ -1,0 +1,82 @@
+<div class="container">
+  <h4>Save new data</h4>
+  <form   [formGroup]="stasticsForm"  (ngSubmit) = "stastics()" class="m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed">
+    <!-- school name -->
+    <div class="row form-group">
+      <div class="col-xl-12 text-xs-center">
+        <label for="name">School &nbsp;:</label>
+        <select  formControlName="name" name="name" class="form-control">
+          <option *ngFor="let temp of schoolData" value="{{temp._id}}" >{{temp.name}}</option>
+        </select>
+      </div>
+    </div>
+    <!-- year/week/month -->
+    <div class="row form-group">
+      <div class="col-xl-4 text-xs-center">
+        <label for="year">year &nbsp;:</label>
+        <select  formControlName="year" name="year" value="1"  class="form-control">
+
+          <option *ngFor="let year of years" value="{{year.id}}">{{year.year}}</option>
+
+        </select>
+      </div>
+      <div class="col-xl-4 text-xs-center">
+        <label for="name">week &nbsp;:</label>
+        <select  formControlName="week" name="week" value="1"  class="form-control">
+          <option *ngFor="let week of weeks" value="{{week.id}}" selected>{{week.week}}</option>
+        </select>
+      </div>
+      <div class="col-xl-4 text-xs-center">
+        <label for="name">month &nbsp;:</label>
+        <select  formControlName="month" name="month" value="1"  class="form-control">
+          <ng-container *ngFor="let month of months">
+            <option value="{{month.id}}" selected>{{month.month}}</option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+    <!-- elec euro, kwh -->
+    <div class="row form-group">
+      <div class="col-xl-6 text-xs-center">
+        <label for="name">Electric Euro&nbsp;:</label>
+        <input  formControlName="elecEuro" name="elecEuro"  type="text" class="form-control m-input" placeholder="Water Litres" name="water_litres" value="">
+      </div>
+      <div class="col-xl-6 text-xs-center">
+        <label for="name">Electric kwh &nbsp;:</label>
+        <input type="text" formControlName="elecKwh" name="elecKwh"  class="form-control m-input" placeholder="Water Litres" name="water_litres" value="">
+      </div>
+    </div>
+    <!-- heating euro , kwh -->
+    <div class="row form-group">
+      <div class="col-xl-6 text-xs-center">
+        <label for="name">Heating Euro &nbsp;:</label>
+        <input type="text"  formControlName="heatEuro" name="heatEuro" class="form-control m-input" placeholder="Heating Euro" name="heating_euro" value="">
+      </div>
+      <div class="col-xl-6 text-xs-center">
+        <label for="name">Heating kWH &nbsp;:</label>
+        <input type="text"  formControlName="heatKwh" name="heatKwh"  class="form-control m-input" placeholder="Heating kWH" name="heating_kwh" value="">
+      </div>
+    </div>
+    <!-- water euro , kwh -->
+    <div class="row form-group">
+      <div class="col-xl-6 text-xs-center">
+        <label for="name">Water Euro &nbsp;:</label>
+        <input type="text"  formControlName="waterEuro" name="waterEuro"  class="form-control m-input" placeholder="Water Euro" name="water_euro" value="">
+      </div>
+      <div class="col-xl-6 text-xs-center">
+        <label for="name">Water Litres &nbsp;:</label>
+        <input type="text"  formControlName="waterLiter" name="waterLiter" class="form-control m-input" placeholder="Water Litres" name="water_litres" value="">
+      </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-xl-6 text-xs-center">
+          <button class="btn btn-sm btn-primary" type="submit">Save</button>
+        </div>
+        <div class="col-xl-6 text-xs-center">
+        </div>
+      </div>
+  </form>
+
+  
+  <!-- /.row form-group -->
+</div>

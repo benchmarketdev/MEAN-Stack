@@ -1,0 +1,44 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'School list'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="card col-lg-12">
+            <div class="card-header">School list</div>
+            <table class="card-body table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>school_id</th>
+                    <th>year</th>
+                    <th>week</th>
+                    <th>month</th>
+                    <th>elect_eur</th>
+                    <th>elect_kwh</th>
+                    <th>heating_eur</th>
+                    <th>heating_kwh</th>
+                    <th>water_eur</th>
+                    <th>water_kwh</th>
+                    <th>Act(edit)</th>
+                    <th>Act(delete)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let schooldata of schooldatas" class="table-active">
+                    <th scope="row"></th>
+                    <td>{{schooldata.school_id}}</td>
+                    <td>{{schooldata.year}}</td>
+                    <td>{{schooldata.week}}</td>
+                    <td>{{schooldata.month}}</td>
+                    <td>{{schooldata.elect_eur}}</td>
+                    <td>{{schooldata.elect_kwh}}</td>
+                    <td>{{schooldata.heating_eur}}</td>
+                    <td>{{schooldata.heating_kwh}}</td>
+                    <td>{{schooldata.water_eur}}</td>
+                    <td>{{schooldata.water_kwh}}</td>
+                    <td><input type="button"  value="Edit" class="btn btn-primary"></td>
+                    <td><input type="button" (click) = "deleteSchooldata(schooldata._id)" value="Delete" class="btn btn-danger"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

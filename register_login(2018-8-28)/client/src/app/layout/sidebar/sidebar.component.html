@@ -1,0 +1,49 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+        <a routerLink="/dashboard/add" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>Add School</span>
+        </a>
+        <a [routerLink]="['/dashboard/save']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
+            <span>Save new data</span>
+        </a>
+        <a [routerLink]="['/dashboard/users']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
+            <span>Users</span>
+        </a>
+    </div>
+
+    <div class="list-group">
+        <div class="nested-menu" *ngFor="let data of schoolData">
+            <a class="list-group-item" (click)="addExpandClass('pages',data._id)">
+                <i class="fa fa-plus"></i>&nbsp;
+                <span>{{data.name}}</span>
+            </a>
+            <ng-container *ngIf="data._id==clickedId">
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <!-- <a  routerLink="/dashboard/detail/{{data._id}}"> -->
+                            <a [routerLink]="['/dashboard/detail', data._id]">
+
+                                <i class="fa fa-monument"></i>&nbsp;
+                                <span>data</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-monument"></i>&nbsp;
+                                <span>chart</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ng-container>
+
+        </div>
+
+    </div>
+
+
+</nav>
